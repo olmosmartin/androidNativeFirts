@@ -3,7 +3,7 @@ package com.example.androidfirst
 fun main() {
     println(findMonth(12));
     println(encontrarTrimestre(8));
-    println(encontrarSemestre(7));
+    println(encontrarSemestre(3));
     resultado("5");
 }
 
@@ -35,10 +35,10 @@ fun encontrarTrimestre (month:Int):String = when (month){
         else -> "error"
 }
 
-fun encontrarSemestre (month:Int):String = when (month){
-        in 1..6 -> "primer semestre"
-        in 7..12 -> "segundo semestre"
-        !in 1..12 -> "no es un numer válido"
+fun encontrarSemestre (month:Int):String = when{ // se puede usar sin parametro
+        month in 1..6 -> "primer semestre"
+        month in 7..12 -> "segundo semestre"
+        month < 1 || month > 12 -> "no es un numer válido"
         else -> "error"
 }
 
