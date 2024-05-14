@@ -1,4 +1,4 @@
-package com.example.androidfirst
+package com.example.androidfirst.sintaxis
 
 class Auto(private var marca: String, var modelo: String) { //marca es private asi que solo se puede modificar con un metodo publico como un setter
 
@@ -43,8 +43,8 @@ class Auto(private var marca: String, var modelo: String) { //marca es private a
 }
 
 fun main() {
-    val auto:Auto =Auto("Reno", "12")
-    val auto2:Auto =Auto("Reno" )
+    val auto: Auto = Auto("Reno", "12")
+    val auto2: Auto = Auto("Reno" )
 
     println("auto: $auto")
     println("auto2: $auto2")

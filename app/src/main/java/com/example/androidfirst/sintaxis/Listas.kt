@@ -1,4 +1,4 @@
-package com.example.androidfirst
+package com.example.androidfirst.sintaxis
 
 fun main () {
     listaInmutable();

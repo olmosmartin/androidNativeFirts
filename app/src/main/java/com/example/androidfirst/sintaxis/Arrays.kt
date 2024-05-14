@@ -1,4 +1,4 @@
-package com.example.androidfirst
+package com.example.androidfirst.sintaxis
 
 fun main() {
     val dias = arrayOf("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo");
