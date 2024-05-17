@@ -1,6 +1,10 @@
 package com.example.androidfirst.firstapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +20,19 @@ class FirstAppActivity : AppCompatActivity() { //FirstAppActivity hereda de AppC
         setContentView(R.layout.activity_first_app) // Establece el diseño de la Activity usando el archivo XML correspondiente
 
         // Inicia la pantalla desde acá
+
+        val btnPulsar = findViewById<Button>(R.id.btnPulsar)
+        val texto = findViewById<EditText>(R.id.editTexto)
+
+        btnPulsar.setOnClickListener {
+            val nombre:String = texto.text.toString()
+            Log.i("tag", "texto: " + nombre)
+            if (nombre.isNotEmpty()) {
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("EXTRA_NAME", nombre)
+                startActivity(intent)
+            }
+        }
 
         /*
         // Configura un listener que se llama al aplicar los insets de la ventana

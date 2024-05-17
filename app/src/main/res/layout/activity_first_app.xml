@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -7,10 +8,60 @@
     tools:context=".firstapp.FirstAppActivity">
 
     <TextView
+        android:id="@+id/escribirNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="22sp"
-        android:text="Hola Mundo"/>
+        android:text="Escribí tu nombre"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTexto">
 
-</FrameLayout>
+    </TextView>
+
+    <TextView
+        android:id="@+id/holamundo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hola mundo"
+        android:textColor="@color/teal_200"
+        android:textSize="32sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/editTexto"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/teal_200"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/btnPulsar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btnPulsar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pulsar"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
