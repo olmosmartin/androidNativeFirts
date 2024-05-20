@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPrimero"
-        android:text="segundo proyecto"
+        android:text="Practica contraint layout"
         />
 
 
