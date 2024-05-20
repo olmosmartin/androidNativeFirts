@@ -29,5 +29,15 @@
         android:text="Practica contraint layout"
         />
 
+    <Button
+        android:id="@+id/btnIMCAPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSegundo"
+        android:text="Calculadora IMC"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
