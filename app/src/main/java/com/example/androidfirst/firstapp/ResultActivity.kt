@@ -16,7 +16,7 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         val texto = findViewById<TextView>(R.id.textresult);
-        val nombre:String = intent.extras?.getString("EXTRA_NAME") ?: ""
+        val nombre: String = intent.extras?.getString("EXTRA_NAME") ?: ""
         texto.text = nombre;
     }
 }

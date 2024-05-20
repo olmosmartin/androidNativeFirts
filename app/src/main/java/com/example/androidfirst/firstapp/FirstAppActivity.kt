@@ -25,7 +25,7 @@ class FirstAppActivity : AppCompatActivity() { //FirstAppActivity hereda de AppC
         val texto = findViewById<EditText>(R.id.editTexto)
 
         btnPulsar.setOnClickListener {
-            val nombre:String = texto.text.toString()
+            val nombre: String = texto.text.toString()
             Log.i("tag", "texto: " + nombre)
             if (nombre.isNotEmpty()) {
                 val intent = Intent(this, ResultActivity::class.java)

@@ -21,7 +21,7 @@ class ConstraintLayoutPracticaActivity : AppCompatActivity() {
 
     }
 
-    private fun navegarGuideline () {
+    private fun navegarGuideline() {
         val intent = Intent(this, GuidelinePractiraActivity::class.java)
         startActivity(intent)
     }

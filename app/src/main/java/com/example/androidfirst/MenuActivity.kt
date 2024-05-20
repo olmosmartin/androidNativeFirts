@@ -28,16 +28,17 @@ class MenuActivity : AppCompatActivity() {
 
     }
 
-    private fun navegarPrimerBoton () {
+    private fun navegarPrimerBoton() {
         val intent = Intent(this, FirstAppActivity::class.java)
         startActivity(intent)
     }
-    private fun navegarSegundoBoton () {
+
+    private fun navegarSegundoBoton() {
         val intent = Intent(this, ConstraintLayoutPracticaActivity::class.java)
         startActivity(intent)
     }
 
-    private fun navegarIMCApp () {
+    private fun navegarIMCApp() {
         val intent = Intent(this, CalculadoraIMCActivity::class.java)
         startActivity(intent)
     }
