@@ -3,6 +3,7 @@ package com.example.androidfirst.calculadoraIMC
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -10,12 +11,17 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.androidfirst.R
+import com.google.android.material.slider.RangeSlider
 
 class CalculadoraIMCActivity : AppCompatActivity() {
 
     private var isMaleSelected: Boolean = true;
+
     private lateinit var cardMale: CardView //lateinit significa q los voy a iniciar despues
     private lateinit var cardFemale: CardView
+
+    private lateinit var altura: TextView
+    private lateinit var alturaSlider: RangeSlider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,29 +35,36 @@ class CalculadoraIMCActivity : AppCompatActivity() {
     private fun initComponent() {
         this.cardMale = findViewById<CardView>(R.id.cardMale)
         this.cardFemale = findViewById<CardView>(R.id.cardFemale)
+        this.altura = findViewById<TextView>(R.id.alturaNumero)
+        this.alturaSlider = findViewById<RangeSlider>(R.id.rsAltura)
     }
 
     private fun initListeners() {
-        cardMale.setOnClickListener{
+        cardMale.setOnClickListener {
             isMaleSelected = true
             setSelectdColor()
         }
-        cardFemale.setOnClickListener{
+        cardFemale.setOnClickListener {
             isMaleSelected = false
             setSelectdColor()
+        }
+        alturaSlider.addOnChangeListener { rangeSider, value, fromUser ->
+            altura.text = value.toInt().toString() + "cm"
         }
 
     }
 
-    private fun getColor(selected:Boolean):Int {
+    private fun getColor(selected: Boolean): Int {
         return if (selected) {
             ContextCompat.getColor(
-            this,
-            R.color.IMC_background_card_selected)
+                this,
+                R.color.IMC_background_card_selected
+            )
         } else {
             ContextCompat.getColor(
                 this,
-                R.color.IMC_background_card)
+                R.color.IMC_background_card
+            )
         }
     }
 

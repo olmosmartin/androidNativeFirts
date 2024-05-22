@@ -12,8 +12,8 @@
     <color name="IMC_text_color">#D1C4E9</color>
     <color name="deep_purple_200">#B39DDB</color>
     <color name="deep_purple_300">#9575CD</color>
-    <color name="IMC_background_card_selected">#FAFAFA</color>
-    <color name="IMC_background_card_selected_copy">#7E57C2</color>
+    <color name="IMC_background_card_selected_copy">#FAFAFA</color>
+    <color name="IMC_background_card_selected">#8D69CD</color>
     <color name="IMC_background_card">#673AB7</color>
     <color name="deep_purple_600">#5E35B1</color>
     <color name="deep_purple_700">#512DA8</color>
