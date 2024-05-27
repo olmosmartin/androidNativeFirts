@@ -6,4 +6,21 @@
     <string name="peso">Peso</string>
     <string name="edad">Edad</string>
     <string name="calcular">Calcular</string>
+    <string name="resultado">Tu resultado</string>
+    <string name="recalcular">Volver a calcular</string>
+
+    <string name="inferior">Inferior al normal</string>
+    <string name="descinferior">El peso se considera inferior al normal</string>
+
+    <string name="normal">Normal</string>
+    <string name="descnormal">El peso se considera normal</string>
+
+    <string name="superior">Superior al normal</string>
+    <string name="descsuperior">El peso se considera superior al normal</string>
+
+    <string name="obesidad">Obesidad</string>
+    <string name="descobesidad">El peso se considera como obesidad</string>
+
+    <string name="error">Error</string>
+
 </resources>

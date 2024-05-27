@@ -23,4 +23,8 @@
     <color name="deep_purple_A200">#7C4DFF</color>
     <color name="deep_purple_A400">#651FFF</color>
     <color name="deep_purple_A700">#6200EA</color>
+
+    <color name="green">#00FF04</color>
+    <color name="amarillo">#FFDD00</color>
+    <color name="rojo">#FF0000</color>
 </resources>

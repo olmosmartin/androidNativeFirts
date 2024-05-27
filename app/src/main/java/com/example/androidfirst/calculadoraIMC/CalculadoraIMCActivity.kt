@@ -1,22 +1,27 @@
 package com.example.androidfirst.calculadoraIMC
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.androidfirst.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 
 class CalculadoraIMCActivity : AppCompatActivity() {
 
+    companion object {
+        const val IMC_RESULT = "IMC_RESULT" //esto es una constante que se puede acceder desde afuera
+    }
+
     private var isMaleSelected: Boolean = true;
+
+    private var initEdad: String = "30"
+    private var initpeso: String = "60"
 
     private lateinit var cardMale: CardView //lateinit significa q los voy a iniciar despues
     private lateinit var cardFemale: CardView
@@ -31,6 +36,8 @@ class CalculadoraIMCActivity : AppCompatActivity() {
     private lateinit var textEdad: TextView
     private lateinit var btnEdadAdd: FloatingActionButton
     private lateinit var btnEdadRemove: FloatingActionButton
+
+    private lateinit var btnContinuar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +62,8 @@ class CalculadoraIMCActivity : AppCompatActivity() {
         this.textEdad = findViewById<TextView>(R.id.edadNumero)
         this.btnEdadAdd = findViewById<FloatingActionButton>(R.id.btnEdadAdd)
         this.btnEdadRemove = findViewById<FloatingActionButton>(R.id.btnEdadRemove)
+
+        this.btnContinuar = findViewById<Button>(R.id.btnCalcular)
     }
 
     private fun initListeners() {
@@ -90,6 +99,24 @@ class CalculadoraIMCActivity : AppCompatActivity() {
             textEdad.text = handleEdadYPeso(textEdad.text.toString(), -1)
         }
 
+        btnContinuar.setOnClickListener {
+            val IMC: Float = calcularIMC()
+            navigateToResult(IMC)
+        }
+
+    }
+
+    private fun navigateToResult (IMC: Float) {
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(IMC_RESULT, IMC)
+        startActivity(intent)
+    }
+
+    private fun calcularIMC(): Float {
+        val alturaMetrosFloat: Float = (this.altura.text.toString().replace("cm", "").toFloat()) / 100
+        val pesoFloat: Float = this.textPeso.text.toString().toFloat()
+        val imc = pesoFloat / (alturaMetrosFloat * alturaMetrosFloat)
+        return String.format("%.2f", imc).toFloat()
     }
 
     private fun handleEdadYPeso (suma:String, numero: Int): String {
@@ -124,10 +151,10 @@ class CalculadoraIMCActivity : AppCompatActivity() {
     }
 
     private fun inicializarEdad() {
-        textEdad.setText("30")
+        textEdad.text = this.initEdad
     }
     private fun inicializarPeso() {
-        textPeso.setText("60")
+        textPeso.text = this.initpeso
     }
 
     //este metodo va a setear el color cuando inicie la pantalla,
