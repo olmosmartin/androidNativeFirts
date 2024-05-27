@@ -12,6 +12,7 @@ import com.example.androidfirst.calculadoraIMC.CalculadoraIMCActivity
 import com.example.androidfirst.constraintLayoutPractica.ConstraintLayoutPracticaActivity
 import com.example.androidfirst.firstapp.FirstAppActivity
 import com.example.androidfirst.firstapp.ResultActivity
+import com.example.androidfirst.listaAppTareas.ListaAppMainActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,10 +22,13 @@ class MenuActivity : AppCompatActivity() {
         val btnPulsar = findViewById<Button>(R.id.btnPrimero)
         val btnPulsar2 = findViewById<Button>(R.id.btnSegundo)
         val btnPulsar3 = findViewById<Button>(R.id.btnIMCAPP)
+        val btnPulsar4 = findViewById<Button>(R.id.btnListaApp)
+
 
         btnPulsar.setOnClickListener { navegarPrimerBoton() }
         btnPulsar2.setOnClickListener { navegarSegundoBoton() }
         btnPulsar3.setOnClickListener { navegarIMCApp() }
+        btnPulsar4.setOnClickListener { navegarListaApp() }
 
     }
 
@@ -40,6 +44,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navegarIMCApp() {
         val intent = Intent(this, CalculadoraIMCActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navegarListaApp() {
+        val intent = Intent(this, ListaAppMainActivity::class.java)
         startActivity(intent)
     }
 }

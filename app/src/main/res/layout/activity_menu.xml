@@ -39,5 +39,15 @@
         android:text="Calculadora IMC"
         />
 
+    <Button
+        android:id="@+id/btnListaApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIMCAPP"
+        android:text="Lista de Tareas"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

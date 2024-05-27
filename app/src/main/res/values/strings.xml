@@ -1,4 +1,5 @@
 <resources>
+    <!-- IMC texts -->
     <string name="app_name">AndroidFirst</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -8,19 +9,17 @@
     <string name="calcular">Calcular</string>
     <string name="resultado">Tu resultado</string>
     <string name="recalcular">Volver a calcular</string>
-
     <string name="inferior">Inferior al normal</string>
     <string name="descinferior">El peso se considera inferior al normal</string>
-
     <string name="normal">Normal</string>
     <string name="descnormal">El peso se considera normal</string>
-
     <string name="superior">Superior al normal</string>
     <string name="descsuperior">El peso se considera superior al normal</string>
-
     <string name="obesidad">Obesidad</string>
     <string name="descobesidad">El peso se considera como obesidad</string>
-
     <string name="error">Error</string>
+
+    <!-- lista texts -->
+    <string name="listatitulo">Lista de tareas</string>
 
 </resources>
