@@ -22,6 +22,7 @@
     <!-- lista texts -->
     <string name="listatitulo">Lista de tareas</string>
     <string name="listaCategorias">Categorias</string>
+    <string name="listatareas">Tareas</string>
     <string name="business">Negocios</string>
     <string name="other">Otros</string>
     <string name="personal">Personal</string>

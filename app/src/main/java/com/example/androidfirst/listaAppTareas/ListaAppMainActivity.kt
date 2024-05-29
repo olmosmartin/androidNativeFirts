@@ -22,9 +22,18 @@ class ListaAppMainActivity : AppCompatActivity() {
         TaskCategory.Other
     )
 
+    private var tareas = mutableListOf(
+        Tarea("nombre1", TaskCategory.Business, false),
+        Tarea("nombre2", TaskCategory.Personal, false),
+        Tarea("nombre3", TaskCategory.Other,  false)
+    )
+
     //los recyclerView necesitan un adapter y un viewHolder
     private lateinit var rvCategory: RecyclerView
     private lateinit var categoriesAdapter: CategoryAdapter
+
+    private lateinit var rvTareas: RecyclerView
+    private lateinit var tareasAdapter: TareasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +45,7 @@ class ListaAppMainActivity : AppCompatActivity() {
 
     private fun initComponent() {
         this.rvCategory = findViewById<RecyclerView>(R.id.rvCategorias)
+        this.rvTareas = findViewById<RecyclerView>(R.id.rvTareas)
     }
 
     private fun renderUI() {
@@ -45,5 +55,8 @@ class ListaAppMainActivity : AppCompatActivity() {
         //        android:orientation="horizontal"
         //        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         //rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        tareasAdapter = TareasAdapter(tareas)
+        rvTareas.adapter = tareasAdapter
     }
 }
