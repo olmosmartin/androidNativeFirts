@@ -21,6 +21,7 @@
     <color name="rojo">#FF0000</color>
 
     <!-- lista app -->
+    <color name="transparent_black">#80000000</color>
     <color name="lista_text_color">#E0F7FA</color>
     <color name="lista_background">#0097A7</color>
     <color name="lista_background_card">#006064</color>

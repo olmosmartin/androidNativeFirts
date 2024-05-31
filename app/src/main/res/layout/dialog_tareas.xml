@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@color/lista_background">
+
+    <EditText
+        android:id="@+id/etAddTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lista_text_color"
+        android:hint="@string/dialogHint"
+        android:textColor="@color/lista_text_color"
+        android:textColorHint="@color/lista_text_color">
+
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/rgAddTarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbAddNegocio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/lista_negocios"
+            android:checked="true"
+            android:text="@string/business"
+            android:textColor="@color/lista_text_color"/>
+
+        <RadioButton
+            android:id="@+id/rbAddPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/lista_personal"
+            android:text="@string/personal"
+            android:textColor="@color/lista_text_color"/>
+
+        <RadioButton
+            android:id="@+id/rbAddotros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/lista_otros"
+            android:text="@string/other"
+            android:textColor="@color/lista_text_color"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/lista_button_color"
+        android:text="@string/dialogButton"
+        android:textColor="@color/lista_background_card" />
+
+</LinearLayout>
