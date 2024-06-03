@@ -2,6 +2,7 @@ package com.example.androidfirst.listaAppTareas
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfirst.R
 
@@ -14,7 +15,12 @@ class TareasAdapter (private val Tareas: List<Tarea>, private val onTareaSelecte
 
     override fun onBindViewHolder(holder: TareasViewHolder, position: Int) {
         holder.render(Tareas[position])
-        // itemView es toda la celda entera del item q renderiza
+        //uso itemview para acceder a la celda que se renderiza
+        val cbTarea = holder.itemView.findViewById<CheckBox>(R.id.cbTarea)
+        cbTarea.setOnClickListener{
+            onTareaSelected(position)
+        }
+        // itemView es toda la celda entera del item que renderiza
         holder.itemView.setOnClickListener {onTareaSelected(position)}
     }
 
