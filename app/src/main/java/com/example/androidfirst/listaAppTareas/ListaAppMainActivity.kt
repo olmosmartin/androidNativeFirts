@@ -81,7 +81,7 @@ class ListaAppMainActivity : AppCompatActivity() {
                 //asigna un TaskCategory según el texto q tenga el radio button
                 val CategoriaSeleccionada: TaskCategory = when (selectedRadioButton.text) {
                     getString(R.string.business) -> TaskCategory.Business
-                    getString(R.string.personal) -> TaskCategory.Business
+                    getString(R.string.personal) -> TaskCategory.Personal
                     else -> TaskCategory.Other
                 }
 
@@ -103,8 +103,13 @@ class ListaAppMainActivity : AppCompatActivity() {
         //        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         //rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        tareasAdapter = TareasAdapter(tareas)
+        tareasAdapter = TareasAdapter(tareas, ::onTareaSelected)
         rvTareas.adapter = tareasAdapter
+    }
+
+    private fun onTareaSelected(index: Int) {
+        tareas[index].isChecked = !tareas[index].isChecked
+        actualizarTarea()
     }
 
     private fun actualizarTarea() {
