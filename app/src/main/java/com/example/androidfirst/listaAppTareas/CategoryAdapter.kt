@@ -1,11 +1,12 @@
 package com.example.androidfirst.listaAppTareas
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfirst.R
 
-class CategoryAdapter(private val Categories: List<TaskCategory>):
+class CategoryAdapter(private val Categories: List<TaskCategory>, private val onCategoriaSelected: (Int) -> Unit):
     RecyclerView.Adapter<CategoriesViewHolder>() {
 
     /*
@@ -22,7 +23,7 @@ class CategoryAdapter(private val Categories: List<TaskCategory>):
         le pasa una categoria en especial a cada view holder
      */
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        holder.render(Categories[position])
+        holder.render(Categories[position], onCategoriaSelected)
     }
 
     /*

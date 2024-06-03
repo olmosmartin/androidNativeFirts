@@ -2,27 +2,19 @@ package com.example.androidfirst.listaAppTareas
 
 import android.app.Dialog
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.androidfirst.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaAppMainActivity : AppCompatActivity() {
 
     //le paso las 3 opciones q hice en mi clase sealed TaskCategory para no hardcodearlas en la lista
-    private var Categorias = listOf(
+    private var categorias = listOf(
         TaskCategory.Business,
         TaskCategory.Personal,
         TaskCategory.Other
@@ -96,7 +88,7 @@ class ListaAppMainActivity : AppCompatActivity() {
     }
 
     private fun renderUI() {
-        categoriesAdapter = CategoryAdapter(Categorias)
+        categoriesAdapter = CategoryAdapter(categorias, { index -> onCategoriaSelected(index) })
         rvCategory.adapter = categoriesAdapter
         //esto es para poner la orientacion de la lista en horizontal, pero yo lo hice en el layout asi:
         //        android:orientation="horizontal"
@@ -110,6 +102,11 @@ class ListaAppMainActivity : AppCompatActivity() {
     private fun onTareaSelected(index: Int) {
         tareas[index].isChecked = !tareas[index].isChecked
         actualizarTarea()
+    }
+
+    private fun onCategoriaSelected(index: Int) {
+        categorias[index].isSelected = !categorias[index].isSelected
+        categoriesAdapter.notifyItemChanged(index)
     }
 
     private fun actualizarTarea() {

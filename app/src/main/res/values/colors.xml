@@ -25,6 +25,7 @@
     <color name="lista_text_color">#E0F7FA</color>
     <color name="lista_background">#0097A7</color>
     <color name="lista_background_card">#006064</color>
+    <color name="lista_background_card_unselected">#476273</color>
     <color name="lista_button_color">#84FFFF</color>
     <color name="lista_negocios">#06C100</color>
     <color name="lista_personal">#FF8442</color>
