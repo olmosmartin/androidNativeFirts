@@ -6,7 +6,7 @@ import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfirst.R
 
-class TareasAdapter (private val Tareas: List<Tarea>, private val onTareaSelected: (Int) -> Unit):
+class TareasAdapter (var Tareas: List<Tarea>, private val onTareaSelected: (Int) -> Unit):
     RecyclerView.Adapter<TareasViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TareasViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_tarea, parent, false)

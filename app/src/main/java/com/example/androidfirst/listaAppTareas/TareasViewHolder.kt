@@ -13,7 +13,9 @@ import com.example.androidfirst.R
 class TareasViewHolder (view: View): RecyclerView.ViewHolder(view) {
     private val tvTareaNombre: TextView = view.findViewById(R.id.tvTareaNombre)
     private val cbTarea:CheckBox = view.findViewById(R.id.cbTarea)
-    private val context: Context = view.context // Agregamos una referencia al contexto
+    private val context: Context = view.context // Agregamos una referencia al contexto, tambien se
+    // puede obtener el contexto de cualquer objeto de la vista que obtenga
+    // por jemplo: tvTareaNombre.context o cbTarea.context
 
     fun render(Tarea: Tarea) {
 

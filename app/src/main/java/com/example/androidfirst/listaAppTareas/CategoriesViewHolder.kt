@@ -1,7 +1,6 @@
 package com.example.androidfirst.listaAppTareas
 
 import android.content.Context
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -17,7 +16,9 @@ class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private val cvListaCategorias:CardView = view.findViewById(R.id.cvListaCategorias)
     private val tvCategorias:TextView = view.findViewById(R.id.tvCategoriaNombre)
     private val vDivider:View = view.findViewById(R.id.vDivider)
-    private val context: Context = view.context // Agregamos una referencia al contexto
+    private val context: Context = view.context // Agregamos una referencia al contexto, tambien se
+    // puede obtener el contexto de cualquer objeto de la vista que obtenga
+    // por jemplo: cvListaCategorias.context o vDivider.context
 
     fun render(taskCategory: TaskCategory, onCategoriaSelected: (Int) -> Unit) {
 

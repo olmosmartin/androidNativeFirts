@@ -2,6 +2,7 @@ package com.example.androidfirst.listaAppTareas
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -88,7 +89,7 @@ class ListaAppMainActivity : AppCompatActivity() {
     }
 
     private fun renderUI() {
-        categoriesAdapter = CategoryAdapter(categorias, { index -> onCategoriaSelected(index) })
+        categoriesAdapter = CategoryAdapter(categorias, ::onCategoriaSelected)
         rvCategory.adapter = categoriesAdapter
         //esto es para poner la orientacion de la lista en horizontal, pero yo lo hice en el layout asi:
         //        android:orientation="horizontal"
@@ -104,12 +105,30 @@ class ListaAppMainActivity : AppCompatActivity() {
         actualizarTarea()
     }
 
+    private fun filterTareasByCategorias():MutableList<Tarea> {
+        var tareasFiltradas:MutableList<Tarea> = tareas
+        categorias.forEach{categoria ->
+            if(!categoria.isSelected) {
+                tareasFiltradas = tareasFiltradas.filter { tarea ->
+                    tarea.categoria != categoria
+                }.toMutableList()
+            }
+        }
+        return tareasFiltradas
+    }
     private fun onCategoriaSelected(index: Int) {
         categorias[index].isSelected = !categorias[index].isSelected
         categoriesAdapter.notifyItemChanged(index)
+        // puedo pasarle al adaptar las tareas filtradas nuevas y actualizar el recyclerview
+        tareasAdapter.Tareas = filterTareasByCategorias()
+        actualizarTarea()
     }
 
     private fun actualizarTarea() {
+//        val categoriasSeleccionadas: List<TaskCategory> = categorias.filter { categoria -> categoria.isSelected }
+//        val nuevasTareas = tareas.filter { tarea -> categoriasSeleccionadas.contains(tarea.categoria) }
+//        tareasAdapter.Tareas = nuevasTareas
+
         tareasAdapter.notifyDataSetChanged()
     }
 }
